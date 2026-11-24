@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introducción a las quinasas &#8212; Investigación de inhibidores de quinasas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=78d55cf8"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=d190bf04"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulos/01_introduccion_quinasas';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Planteamiento del problema" href="02_planteamiento.html" />
+    <link rel="prev" title="Investigación de inhibidores de quinasas" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Advertencia de versión"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navegación del sitio">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="En esta página">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Investigación de inhibidores de quinasas</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Búsqueda</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Investigación de inhibidores de quinasas
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contexto</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a las quinasas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_planteamiento.html">Planteamiento del problema</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="03_datos.html">Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_eda.html">Análisis exploratorio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelado</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="05_representacion_moleculas.html">Representación molecular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_modelado_ml.html">Modelado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_evaluacion.html">Evaluación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_interpretabilidad.html">Interpretabilidad</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cierre</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="09_conclusiones.html">Conclusiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/lauraformore/Quinazas_Investigation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repositorio de origen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/lauraformore/Quinazas_Investigation/issues/new?title=Issue%20on%20page%20%2Fcapitulos/01_introduccion_quinasas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Abrir un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/capitulos/01_introduccion_quinasas.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Tema" data-bs-title="Tema"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Claro"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Oscuro"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Sistema"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a las quinasas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son">Qué son</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-importan-en-cancer">Por qué importan en cáncer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhibidores-de-quinasas">Inhibidores de quinasas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-la-selectividad">El problema de la selectividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-cuantifica-la-potencia">Cómo se cuantifica la potencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecturas-de-partida">Lecturas de partida</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-las-quinasas">
+<h1>Introducción a las quinasas<a class="headerlink" href="#introduccion-a-las-quinasas" title="Link to this heading">#</a></h1>
+<section id="que-son">
+<h2>Qué son<a class="headerlink" href="#que-son" title="Link to this heading">#</a></h2>
+<p>Las <strong>proteínas quinasas</strong> son enzimas que transfieren un grupo fosfato desde el ATP a un residuo de otra proteína (serina, treonina o tirosina). Esa fosforilación actúa como un interruptor: cambia la conformación, la actividad o la localización de la proteína diana. Es el mecanismo básico de transmisión de señales dentro de la célula.</p>
+<p>El genoma humano codifica unas <strong>518 quinasas</strong>, el llamado <em>quinoma</em>. Se agrupan en familias según la similitud de su dominio catalítico:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Grupo</p></th>
+<th class="head"><p>Ejemplos</p></th>
+<th class="head"><p>Función predominante</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TK (tirosina quinasas)</p></td>
+<td><p>EGFR, ABL, VEGFR, ALK</p></td>
+<td><p>Receptores de factores de crecimiento</p></td>
+</tr>
+<tr class="row-odd"><td><p>TKL</p></td>
+<td><p>BRAF, RAF1, ALK5</p></td>
+<td><p>Cascada MAPK, TGF-β</p></td>
+</tr>
+<tr class="row-even"><td><p>STE</p></td>
+<td><p>MEK1/2, PAK</p></td>
+<td><p>Módulos de señalización MAPK</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMGC</p></td>
+<td><p>CDK1-9, GSK3, MAPK/ERK</p></td>
+<td><p>Ciclo celular, respuesta a estrés</p></td>
+</tr>
+<tr class="row-even"><td><p>AGC</p></td>
+<td><p>AKT, PKA, PKC, S6K</p></td>
+<td><p>Metabolismo, supervivencia</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAMK</p></td>
+<td><p>CAMK2, AMPK</p></td>
+<td><p>Señalización por calcio y energía</p></td>
+</tr>
+<tr class="row-even"><td><p>CK1</p></td>
+<td><p>CK1α/δ/ε</p></td>
+<td><p>Ritmo circadiano, Wnt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="por-que-importan-en-cancer">
+<h2>Por qué importan en cáncer<a class="headerlink" href="#por-que-importan-en-cancer" title="Link to this heading">#</a></h2>
+<p>En una célula sana, las vías de señalización mediadas por quinasas están reguladas: una señal externa activa un receptor, el receptor activa una cascada, y la cascada se apaga. En muchos tumores ese control se rompe por:</p>
+<ul class="simple">
+<li><p><strong>Mutaciones activadoras</strong> — p. ej. <code class="docutils literal notranslate"><span class="pre">BRAF</span> <span class="pre">V600E</span></code> en melanoma, que mantiene la quinasa activa sin señal previa.</p></li>
+<li><p><strong>Fusiones génicas</strong> — <code class="docutils literal notranslate"><span class="pre">BCR-ABL</span></code> en leucemia mieloide crónica, <code class="docutils literal notranslate"><span class="pre">EML4-ALK</span></code> en cáncer de pulmón.</p></li>
+<li><p><strong>Amplificación o sobreexpresión</strong> — <code class="docutils literal notranslate"><span class="pre">HER2</span></code> (ERBB2) en subtipos de cáncer de mama.</p></li>
+<li><p><strong>Pérdida de reguladores negativos</strong> — p. ej. pérdida de PTEN, que desinhibe la vía PI3K/AKT.</p></li>
+</ul>
+<p>El resultado es una señal de proliferación y supervivencia permanentemente encendida. Esto convierte a la quinasa alterada en una <strong>diana terapéutica</strong>: si se bloquea su actividad catalítica, la señal se apaga.</p>
+</section>
+<section id="inhibidores-de-quinasas">
+<h2>Inhibidores de quinasas<a class="headerlink" href="#inhibidores-de-quinasas" title="Link to this heading">#</a></h2>
+<p>Un inhibidor de quinasa es una molécula pequeña que se une a la enzima y le impide fosforilar su sustrato. Se clasifican por el sitio y el modo de unión:</p>
+<ul class="simple">
+<li><p><strong>Tipo I</strong> — compiten con el ATP en el bolsillo catalítico, con la quinasa en conformación activa (DFG-in). Ejemplo: erlotinib.</p></li>
+<li><p><strong>Tipo II</strong> — se unen con la quinasa en conformación inactiva (DFG-out), ocupando además un bolsillo hidrofóbico adyacente. Ejemplo: imatinib.</p></li>
+<li><p><strong>Tipo III / IV</strong> — alostéricos; se unen fuera del sitio del ATP. Ejemplo: trametinib (MEK).</p></li>
+<li><p><strong>Covalentes</strong> — forman un enlace irreversible con un residuo nucleofílico, típicamente una cisteína. Ejemplo: osimertinib (EGFR C797).</p></li>
+</ul>
+<p>Desde la aprobación de imatinib en 2001, la FDA ha autorizado más de 80 inhibidores de quinasas, mayoritariamente en oncología. Es la clase de fármaco dirigido más numerosa.</p>
+</section>
+<section id="el-problema-de-la-selectividad">
+<h2>El problema de la selectividad<a class="headerlink" href="#el-problema-de-la-selectividad" title="Link to this heading">#</a></h2>
+<p>El bolsillo del ATP está muy conservado entre las 518 quinasas humanas. Un inhibidor diseñado para una diana casi siempre se une también a otras: es la <strong>poli-farmacología</strong>. Esto tiene dos caras:</p>
+<ul class="simple">
+<li><p>Puede ser indeseable — los efectos adversos de muchos inhibidores vienen de dianas secundarias.</p></li>
+<li><p>Puede ser deseable — algunos fármacos eficaces lo son precisamente por inhibir varias quinasas de una misma vía.</p></li>
+</ul>
+<p>Para el modelado esto es relevante: la actividad de un compuesto siempre se mide <strong>contra una diana concreta en un ensayo concreto</strong>. Mezclar medidas de dianas distintas en un mismo modelo sin tenerlo en cuenta produce resultados sin sentido.</p>
+</section>
+<section id="como-se-cuantifica-la-potencia">
+<h2>Cómo se cuantifica la potencia<a class="headerlink" href="#como-se-cuantifica-la-potencia" title="Link to this heading">#</a></h2>
+<p>Los ensayos bioquímicos devuelven una concentración:</p>
+<ul class="simple">
+<li><p><strong>IC50</strong> — concentración que inhibe el 50 % de la actividad enzimática.</p></li>
+<li><p><strong>Ki</strong> — constante de disociación del inhibidor, independiente de la concentración de sustrato.</p></li>
+<li><p><strong>Kd</strong> — constante de disociación en ensayos de unión.</p></li>
+</ul>
+<p>Todas se convierten a escala logarítmica para el modelado:</p>
+<div class="math notranslate nohighlight">
+\[\text{pIC50} = -\log_{10}(\text{IC50 en mol/L})\]</div>
+<p>Así, 1 nM → pIC50 = 9; 1 µM → pIC50 = 6. La escala logarítmica es la adecuada porque la energía libre de unión es proporcional al logaritmo de la constante de afinidad, y porque los errores experimentales son multiplicativos, no aditivos.</p>
+<p>Esta variable, <strong>pK</strong>, es la que el modelo del proyecto va a predecir.</p>
+</section>
+<section id="lecturas-de-partida">
+<h2>Lecturas de partida<a class="headerlink" href="#lecturas-de-partida" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Manning et al. (2002), <em>The protein kinase complement of the human genome</em>, Science.</p></li>
+<li><p>Roskoski (2024), revisiones anuales de inhibidores de quinasas aprobados.</p></li>
+<li><p>Cohen, Cross &amp; Jänne (2021), <em>Kinase drug discovery 20 years after imatinib</em>, Nat Rev Drug Discov.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./capitulos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Investigación de inhibidores de quinasas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_planteamiento.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Planteamiento del problema</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-son">Qué son</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-importan-en-cancer">Por qué importan en cáncer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inhibidores-de-quinasas">Inhibidores de quinasas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-de-la-selectividad">El problema de la selectividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-cuantifica-la-potencia">Cómo se cuantifica la potencia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecturas-de-partida">Lecturas de partida</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Laura
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
