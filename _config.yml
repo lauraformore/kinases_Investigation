@@ -1,0 +1,33 @@
+title: Investigación de inhibidores de quinasas
+author: Laura
+logo: ""
+copyright: "2026"
+
+only_build_toc_files: true
+
+execute:
+  # 'off' mientras los notebooks dependan de datos aún no descargados.
+  # Cambiar a 'auto' cuando datos/procesados/ esté poblado.
+  execute_notebooks: "off"
+  timeout: 300
+  allow_errors: false
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - referencias.bib
+
+repository:
+  url: https://github.com/lauraformore/Quinazas_Investigation
+  path_to_book: .
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+sphinx:
+  config:
+    language: es

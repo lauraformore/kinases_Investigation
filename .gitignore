@@ -1,0 +1,36 @@
+# Jupyter Book
+_build/
+.jupyter_cache/
+jupyter_execute/
+
+# Datos (pesados; se regeneran con los notebooks)
+datos/crudos/*
+!datos/crudos/.gitkeep
+datos/procesados/*
+!datos/procesados/.gitkeep
+
+# Modelos entrenados
+modelos/*
+!modelos/.gitkeep
+*.joblib
+*.pkl
+*.pt
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Entornos y secretos
+.env
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

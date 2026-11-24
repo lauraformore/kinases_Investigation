@@ -1,0 +1,21 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Contexto
+    chapters:
+      - file: capitulos/01_introduccion_quinasas
+      - file: capitulos/02_planteamiento
+  - caption: Datos
+    chapters:
+      - file: capitulos/03_datos
+      - file: capitulos/04_eda
+  - caption: Modelado
+    chapters:
+      - file: capitulos/05_representacion_moleculas
+      - file: capitulos/06_modelado_ml
+      - file: capitulos/07_evaluacion
+      - file: capitulos/08_interpretabilidad
+  - caption: Cierre
+    chapters:
+      - file: capitulos/09_conclusiones
+      - file: referencias
